@@ -3,23 +3,44 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
-html {
+ 
+
+ html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
+* {
+  font-family: "Source Sans Pro", sans-serif;
+ }
 
 body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  background-color: #e0bb00;
+  background-image: url("https://www.transparenttextures.com/patterns/little-triangles.png");
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+
+.profileimg {
+  display: flex;
+  justify-content: center;
+}
+
+.username {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  margin: 90px;
+  padding: 10px;
+  align-items: center;
+  background-color: #f4f1ec;
+  flex-direction: column;
+}
