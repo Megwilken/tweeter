@@ -24,16 +24,20 @@ span.logo {
   font-size: 60px;
 }
 
-span.calltoaction {
+.calltoaction {
   font-size: 20px; 
   display: flex;
   flex-direction: column;
-
+  align-items: center;
+  justify-content: center;
+  
 }
 
 #arrowicon {
   color: #FF000f;
   display: flex;
-  align-items: center;
   justify-content: center;
 }
+
+
+
