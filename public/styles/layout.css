@@ -3,18 +3,21 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
- 
 
- html {
+
+html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
 * {
   font-family: "Source Sans Pro", sans-serif;
- }
+}
 
 body {
   color: #545149;
@@ -38,7 +41,7 @@ body {
 
 main {
   display: flex;
-  margin: 90px;
+
   padding: 10px;
   align-items: center;
   background-color: #f4f1ec;

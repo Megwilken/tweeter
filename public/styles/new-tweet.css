@@ -1,15 +1,16 @@
 container {
   display: flex;
   flex-direction: column;
+
 }
 
 .new-tweet {
-  width: 99%; 
+  width: 99%;
 }
 
-.tweet {
+.tweetButton {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   flex-wrap: inherit;
 }
 
@@ -22,7 +23,7 @@ container {
   color: black;
   background-color: #f4f1ec;
   outline: none;
-  font-size: large;
+  font-size: 20px;
 }
 
 button {
@@ -35,7 +36,7 @@ button {
 
 .counter {
   display: flex;
-  align-self:flex-end;
+  align-self: flex-end;
   font-family: Bungee, sans-serif;
   font-size: 20px;
 
