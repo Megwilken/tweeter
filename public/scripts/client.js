@@ -4,11 +4,14 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(function () {
   console.log("jQuery is ready");
 
   const createTweetElement = function (tweetData) {
     let article = $("<article>").addClass("tweet");
+    const date = timeago.format(tweetData.created_at);
+
     const tweetBody = `
     <header>
        <span>
@@ -24,8 +27,7 @@ $(document).ready(function () {
        </main>
        <footer>
        <span>
-       <p class="datePosted">${tweetData.created_at}</p>
-       </span>
+       <p class="datePosted">${date}</p>
        <span><i class="fa-solid fa-flag" id="footerIcon"></i>
        <i class="fa-solid fa-retweet" id="footerIcon"></i>
        <i class="fa-solid fa-heart" id="footerIcon"></i></span>
