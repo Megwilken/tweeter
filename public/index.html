@@ -70,68 +70,16 @@
 
   <!-- Page-specific (main) content here -->
   <main class="container">
-    <section class="new-tweet" method="POST" action="/tweets/">
-      <form class="form">
+    <section class="new-tweet" method="POST" action="/tweets">
+      <form class="form" method="POST" action="/tweets/">
         <label for="tweet-text">What are you humming about?</label>
         <div class="text"> <textarea rows="auto" name="text" id="tweet-text"></textarea></div>
         <div class="tweetButton">
-          <button type="submit">Tweet</button>
+          <button type="submit" id="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="charCount">140</output>
         </div>
         <br>
-        <section id="tweets-container">
-    <!-- <article class="tweet">  -->
-            <!-- <header>
-              <span>
-                <h2 class="userNameTweetBox"><i class="fa-regular fa-user" id="profileIcon"></i> Newton</h2>
-              </span>
-              <span>
-                <h2 class="userHandle">@SirIssac</h2>
-              </span>
-            </header>
-            <main>
-              <p class="userTweet">If I have seen further it is by standing on the shoulder of giants</p>
-              <hr>
-            </main>
-            <footer>
-              <span>
-                <p class="datePosted">10 days ago</p>
-              </span>
-              <span><i class="fa-solid fa-flag" id="footerIcon"></i>
-                <i class="fa-solid fa-retweet" id="footerIcon"></i>
-                <i class="fa-solid fa-heart" id="footerIcon"></i></span>
-            </footer>
-          </article>
-        </section>
-        <br>
-        <section id ="tweets-container"> -->
-          <!-- <article class="tweet">
-            <header>
-              <span>
-                <h2 class="userNameTweetBox"><i class="fa-regular fa-user" id="profileIcon"></i> Rhoda Jacobs</h2>
-              </span>
-              <span>
-                <h2 class="userHandle">@Mrs.Jacobs</h2>
-              </span>
-            </header>
-            <main>
-              <p class="userTweet">Hello World!</p>
-              <hr>
-            </main>
-            <footer>
-              <span>
-                <p class="datePosted">15 days ago</p>
-              </span>
-              <span><i class="fa-solid fa-flag" id="footerIcon"></i>
-                <i class="fa-solid fa-retweet" id="footerIcon"></i>
-                <i class="fa-solid fa-heart" id="footerIcon"></i></span>
-            </footer>
-</article> -->
-</section>
-
-
-
-
+        <section id="tweets-container"></section>
 
   </main>
 </body>
