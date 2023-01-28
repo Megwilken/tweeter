@@ -7,7 +7,7 @@
 $(document).ready(function () {
   console.log("jQuery is ready");
 
-  const tweetData = {
+  const tweetData = [{
     user: {
       name: "Newton",
       avatars: "https://i.imgur.com/73hZDYK.png",
@@ -17,10 +17,10 @@ $(document).ready(function () {
       text: "If I have seen further it is by standing on the shoulders of giants",
     },
     created_at: 1461116232227,
-  };
+  }];
 
-  const createTweetElement = function(tweet) {
-    let $tweet = $("<article>").addClass("tweet");
+  const createTweetElement = function(tweetData) {
+    let article = $("<article>").addClass("tweet");
     const tweetBody = `
     <header>
        <span>
@@ -44,12 +44,12 @@ $(document).ready(function () {
        </footer>
        `;
 
-    $tweet.append(tweetBody);
-    return $tweet;
+    article.append(tweetBody);
+    return article;
   };
 
   const renderTweets = function (tweets) {
-    for (const tweet of Object.keys(tweets)) {
+    for (const tweet of (tweets)) {
       let $tweet = createTweetElement(tweet);
       $(`#tweets-container`).append($tweet);
     }
@@ -61,7 +61,7 @@ $("#submit").submit(function(event) {
   alert("submitted");
   postTweet()
 })
-
+//needs to submit to initial-tweets.json?
 const postTweet = () => {
   $.ajax({
     url: "/tweets/", 
@@ -71,9 +71,9 @@ const postTweet = () => {
       console.log(data);
       $("#submit").prop("disabled", false).text("Submit");
     renderTweets()
-//     }
-//   });
-//     }
-//   })
+    }
+  });
+    }
+  })
   
 
