@@ -7,19 +7,7 @@
 $(document).ready(function () {
   console.log("jQuery is ready");
 
-  const tweetData = [{
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  }];
-
-  const createTweetElement = function(tweetData) {
+  const createTweetElement = function (tweetData) {
     let article = $("<article>").addClass("tweet");
     const tweetBody = `
     <header>
@@ -43,37 +31,32 @@ $(document).ready(function () {
        <i class="fa-solid fa-heart" id="footerIcon"></i></span>
        </footer>
        `;
-
     article.append(tweetBody);
     return article;
   };
 
   const renderTweets = function (tweets) {
-    for (const tweet of (tweets)) {
-      let $tweet = createTweetElement(tweet);
-      $(`#tweets-container`).append($tweet);
+    for (const tweet of tweets) {
+      $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
-  renderTweets(tweetData);
 
-$("#submit").submit(function(event) {
-  event.preventDefault();
-  alert("submitted");
-  postTweet()
-})
-//needs to submit to initial-tweets.json?
-const postTweet = () => {
-  $.ajax({
-    url: "/tweets/", 
-    type: "POST",
-    data: $('.new-tweet').serialize(),
-    success: (data) => {
-      console.log(data);
-      $("#submit").prop("disabled", false).text("Submit");
-    renderTweets()
-    }
+  $(".create-tweet").on("submit", function (event) {
+    event.preventDefault();
+
+    $.ajax({
+      url: "/tweets/",
+      type: "POST",
+      data: $(".create-tweet").serialize(),
+    }).done(function (data) {
+      $("#tweet-container").empty();
+      loadTweets();
+    });
   });
-    }
-  })
-  
 
+  const loadTweets = function () {
+    $.get("/tweets", renderTweets);
+  };
+
+  loadTweets();
+});
