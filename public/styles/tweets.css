@@ -1,13 +1,16 @@
 #tweets-container {
   display: flex;
   flex-direction: column;
+  
+}
+
+article.tweet {
   color: black;
   background-color: #f4f1ec;
   border: solid;
   padding: 10px;
+  margin: 10px;
 }
-
-
 
 .tweet header {
   display: flex;
@@ -60,7 +63,7 @@ hr {
   font-size: 20px;
 }
 
-#tweets-container:hover {
+article.tweet:hover {
   box-shadow: 5px 5px 5px #8D95AF;
 
 }
