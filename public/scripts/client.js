@@ -43,21 +43,21 @@ $(document).ready(function () {
 
   $(".create-tweet").on("submit", function (event) {
     event.preventDefault();
-    /* if charcount exceeds 140, alert message 
-    if charcount is 0, alert message
-    the form should not be cleared
-    the form should not submit 
-
-    else { 
-    */
-    $.ajax({
-      url: "/tweets/",
-      type: "POST",
-      data: $(".create-tweet").serialize(),
-    }).done(() => {
-      loadTweets();
-      $('textarea').val('');
-    });
+    const tweetText = $("#tweet-text").val();
+    if (tweetText.length > 140) {
+      alert("Your Tweet cannot exceed 140 characters!");
+    } else if (tweetText === "" || tweetText === null) {
+      alert("Your Tweet is empty!");
+    } else {
+      $.ajax({
+        url: "/tweets/",
+        type: "POST",
+        data: $(".create-tweet").serialize(),
+      }).done(() => {
+        loadTweets();
+        $("textarea").val("");
+      });
+    }
   });
 
   const loadTweets = function () {
