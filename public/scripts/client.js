@@ -4,7 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-
 $(document).ready(function () {
   console.log("jQuery is ready");
 
@@ -26,7 +25,6 @@ $(document).ready(function () {
        <hr>
        </main>
        <footer>
-       <span>
        <p class="datePosted">${date}</p>
        <span><i class="fa-solid fa-flag" id="footerIcon"></i>
        <i class="fa-solid fa-retweet" id="footerIcon"></i>
@@ -45,20 +43,25 @@ $(document).ready(function () {
 
   $(".create-tweet").on("submit", function (event) {
     event.preventDefault();
+    /* if charcount exceeds 140, alert message 
+    if charcount is 0, alert message
+    the form should not be cleared
+    the form should not submit 
 
+    else { 
+    */
     $.ajax({
       url: "/tweets/",
       type: "POST",
       data: $(".create-tweet").serialize(),
-    }).done(function (data) {
-      $("#tweet-container").empty();
+    }).done(() => {
       loadTweets();
+      $('textarea').val('');
     });
   });
 
   const loadTweets = function () {
     $.get("/tweets", renderTweets);
   };
-
   loadTweets();
 });

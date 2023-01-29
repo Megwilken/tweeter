@@ -1,7 +1,6 @@
 #tweets-container {
   display: flex;
   flex-direction: column;
-  
 }
 
 article.tweet {
@@ -12,12 +11,11 @@ article.tweet {
   margin: 10px;
 }
 
-.tweet header {
+article.tweet header {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px 10px;
-
   justify-content: space-between;
   font-family: Bungee, sans-serif;
   font-size: 15px;
@@ -32,6 +30,12 @@ article.tweet {
   font-size: 20px;
 
 }
+
+.userNameTweetBox {
+  display: flex;
+  align-items: center;
+}
+
 
 .tweet footer {
   display: flex;
