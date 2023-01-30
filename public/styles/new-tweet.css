@@ -14,6 +14,15 @@ container {
   flex-wrap: inherit;
 }
 
+#error {
+  display: flex;
+  justify-content: center;
+  color: red;
+  position: relative;
+  border: solid;
+  border-width: thick;
+  }
+
 #tweet-text {
   width: 100%;
   border-top-color: transparent;

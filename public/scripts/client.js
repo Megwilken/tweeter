@@ -52,9 +52,13 @@ $(document).ready(function () {
     event.preventDefault();
     const tweetText = $("#tweet-text").val();
     if (tweetText.length > 140) {
-      alert("Your Tweet cannot exceed 140 characters!");
+      $("#submit").click(function() {
+        $(".errorLong").slideDown(); 
+      });
     } else if (tweetText === "" || tweetText === null) {
-      alert("Your Tweet is empty!");
+       $("#submit").click(function() {
+        $(".errorShort").slideDown(); 
+      });
     } else {
       $.ajax({
         url: "/tweets/",

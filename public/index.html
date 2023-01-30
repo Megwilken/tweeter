@@ -74,14 +74,20 @@
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
+      
       <form class="create-tweet" method="POST" action="/tweets/">
+        <p class="errorShort" id="error" style="display:none">🚨 Your tweet is empty! Try adding more text. 🚨</p>
+        <p class="errorLong" id="error" style="display:none">🚨 Your tweet exceeds 140 characters! 🚨</p>
         <label for="tweet-text">What are you humming about?</label>
+      
        <textarea rows="auto" name="text" id="tweet-text"></textarea>
+      
         <div class="tweetButton">
+       
           <button type="submit" id="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="charCount">140</output>
         </div>
-        <br>
+        </form>
         <section id="tweets-container"></section>
   </main>
 </body>
