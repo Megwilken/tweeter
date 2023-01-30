@@ -7,6 +7,13 @@
 $(document).ready(function () {
   console.log("jQuery is ready");
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+
   const createTweetElement = function (tweetData) {
     let article = $("<article>").addClass("tweet");
     const date = timeago.format(tweetData.created_at);
@@ -21,7 +28,7 @@ $(document).ready(function () {
        </span>
        </header>
        <main>
-       <p class="userTweet">${tweetData.content.text}</p>
+       <p class="userTweet">${escape(tweetData.content.text)}</p>
        <hr>
        </main>
        <footer>
@@ -36,7 +43,7 @@ $(document).ready(function () {
   };
 
   const renderTweets = function (tweets) {
-    for (const tweet of tweets) {
+      for (const tweet of tweets) {
       $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
@@ -54,7 +61,7 @@ $(document).ready(function () {
         type: "POST",
         data: $(".create-tweet").serialize(),
       }).done(() => {
-        loadTweets();
+        loadTweets()
         $("textarea").val("");
       });
     }
