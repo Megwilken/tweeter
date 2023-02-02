@@ -5,6 +5,8 @@
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
 
+  <!-- Disable Viewport -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -45,7 +47,9 @@
   <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   <!-- Timeago Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 </head>
 
@@ -54,41 +58,39 @@
   <nav>
     <span class="logo">tweeter</span>
     <div class="calltoaction">
-      <span>
-        <p><b>write</b> a new tweet</p>
-      </span>
+      <p><b>write</b> a new tweet</p>
       <i class="fa-solid fa-angles-down" id="arrowicon"></i>
     </div>
   </nav>
 
-
+  <!-- Header -->
   <header>
-    <div class="profileimg">
-      <img src="/images/profile-hex.png">
-    </div>
-    <div class="username">
-      <h2>Meg Wilken</h2>
+    <div class="user">
+      <div class="profileimg">
+        <img src="/images/profile-hex.png">
+      </div>
+      <div class="username">
+        <h2>Meg Wilken</h2>
+      </div>
     </div>
   </header>
 
   <!-- Page-specific (main) content here -->
+
   <main class="container">
     <section class="new-tweet">
-      
       <form class="create-tweet" method="POST" action="/tweets/">
         <p class="errorShort" id="error" style="display:none">🚨 Your tweet is empty! Try adding more text. 🚨</p>
         <p class="errorLong" id="error" style="display:none">🚨 Your tweet exceeds 140 characters! 🚨</p>
         <label for="tweet-text">What are you humming about?</label>
-      
-       <textarea rows="auto" name="text" id="tweet-text"></textarea>
-      
+        <textarea rows="auto" name="text" id="tweet-text"></textarea>
         <div class="tweetButton">
-       
           <button type="submit" id="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="charCount">140</output>
         </div>
-        </form>
-        <section id="tweets-container"></section>
+      </form>
+    </section>
+    <section id="tweets-container"></section>
   </main>
 </body>
 

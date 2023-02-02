@@ -22,12 +22,10 @@ html {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-size: 24px;
-  background-color: #e0bb00;
+  font-size: 30px;
+  background-color: 	#cd9600;
   background-image: url("https://www.transparenttextures.com/patterns/little-triangles.png");
 }
-
-
 
 .profileimg {
   display: flex;
@@ -37,13 +35,32 @@ body {
 .username {
   display: flex;
   justify-content: center;
+  color: white
 }
 
 main {
   display: flex;
-
   padding: 10px;
   align-items: center;
   background-color: #f4f1ec;
   flex-direction: column;
 }
+
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    font-size: 24px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-image: none;
+    background-color: #f4f1ec;
+  }
+
+  main {
+    padding-top: 20vh;
+    margin-left: 5vw;
+    background-color: #f4f1ec;
+    width: 70%;
+  }
+}
+
