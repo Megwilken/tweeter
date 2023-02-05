@@ -4,13 +4,8 @@ container {
 }
 
 .new-tweet {
-  width: 99%;
-}
-
-.tweetButton {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: inherit;
+  width: 95%;
+  font-size: 25px;
 }
 
 #error {
@@ -20,7 +15,7 @@ container {
   position: relative;
   border: solid;
   border-width: thick;
-  }
+}
 
 #tweet-text {
   width: 100%;
@@ -28,10 +23,17 @@ container {
   border-right-color: transparent;
   border-left-color: transparent;
   border-bottom-color: black;
+  border-width: 3px;
   color: black;
   background-color: #f4f1ec;
   outline: none;
   font-size: 20px;
+}
+
+.tweetButton {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: inherit;
 }
 
 button {
@@ -53,11 +55,12 @@ button {
   color: red;
 }
 
-
+/* Header Styles for a Desktop View */
 @media (min-width: 1024px) {
-.new-tweet {
-  width: 68vw;
-  justify-content: center;
-  margin-left: 15px;
+  .new-tweet {
+    width: 60vw;
+    justify-content: center;
+    margin-left: 15px;
+    }
   }
-}
+

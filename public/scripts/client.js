@@ -7,13 +7,14 @@
 $(document).ready(function () {
   console.log("jQuery is ready");
 
+  /* Function that prevents XSS attacks */
   const escape = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-
+  /* Function that creates a tweet element */
   const createTweetElement = function (tweetData) {
     let article = $("<article>").addClass("tweet");
     const date = timeago.format(tweetData.created_at);
@@ -21,7 +22,7 @@ $(document).ready(function () {
     const tweetBody = `
     <header>
        <span>
-       <h2 class="userNameTweetBox"><img src=${tweetData.user.avatars}>${tweetData.user.name}</h2>
+       <h2 class="userNameTweetBox"><img src=${tweetData.user.avatars}>&nbsp; &nbsp;${tweetData.user.name}</h2>
        </span>
        <span>
        <h2 class="userHandle">${tweetData.user.handle}</h2>
@@ -29,8 +30,7 @@ $(document).ready(function () {
        </header>
        <main>
        <p class="userTweet">${escape(tweetData.content.text)}</p>
-       <hr>
-       </main>
+        </main>
        <footer>
        <p class="datePosted">${date}</p>
        <span><i class="fa-solid fa-flag" id="footerIcon"></i>
@@ -42,12 +42,14 @@ $(document).ready(function () {
     return article;
   };
 
+/* Function that renders tweets */
   const renderTweets = function (tweets) {
       for (const tweet of tweets) {
       $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
+/* Function that handles the form submission */
   $(".create-tweet").on("submit", function (event) {
     event.preventDefault();
     const tweetText = $("#tweet-text").val();
@@ -70,7 +72,8 @@ $(document).ready(function () {
       });
     }
   });
-
+  
+/* Function that loads tweets */
   const loadTweets = function () {
     $.get("/tweets", renderTweets);
   };

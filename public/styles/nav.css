@@ -7,43 +7,39 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1.5em;
-  flex-wrap: nowrap;
   position: fixed;
-  width: 100%
-}
-
-span {
-  display: flex;
+  width: 100%;
   font-family: Bungee, sans-serif;
-
 }
 
-span.logo {
+.logo {
   display: flex;
-  font-size: 60px;
+  font-size: 50px;
+  font-family: Bungee, sans-serif;
 }
 
 .calltoaction {
-  font-size: 20px;
+  font-size: 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-right: 1.5em;
+}
 
+p {
+  margin-bottom: 2px;
 }
 
 #arrowicon {
   color: #FF000f;
-  display: flex;
-  justify-content: center;
+  margin-bottom: 1.5em;
 }
 
-/* Tablet: minimum width of 768px to maximum width of 1024px */
-@media only screen and (max-width: 1023px) {
-  /* Write Tablet only CSS here */
+/* Header Styles for a Desktop View */
+@media (max-width: 1023px) {
   nav {
     background-color: 	#cd9600;
     background-image: url("https://www.transparenttextures.com/patterns/little-triangles.png");
   }
-
 }

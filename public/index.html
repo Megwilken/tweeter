@@ -8,19 +8,18 @@
   <!-- Disable Viewport -->
   <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-    type="text/css" />
-
   <!-- Fonts and Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
 
   <!-- App CSS -->
   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -70,27 +69,35 @@
         <img src="/images/profile-hex.png">
       </div>
       <div class="username">
-        <h2>Meg Wilken</h2>
+        <p><b>Meg</b> Wilken</p>
       </div>
     </div>
   </header>
 
   <!-- Page-specific (main) content here -->
-
   <main class="container">
+
+    <!-- Create a New Tweet -->
     <section class="new-tweet">
       <form class="create-tweet" method="POST" action="/tweets/">
+
+        <!-- Error Messages for Empty Submission or Exceeded Character Limit -->
         <p class="errorShort" id="error" style="display:none">🚨 Your tweet is empty! Try adding more text. 🚨</p>
         <p class="errorLong" id="error" style="display:none">🚨 Your tweet exceeds 140 characters! 🚨</p>
+
         <label for="tweet-text">What are you humming about?</label>
         <textarea rows="auto" name="text" id="tweet-text"></textarea>
         <div class="tweetButton">
-          <button type="submit" id="submit">Tweet</button>
+          <button type="submit" class="tweetButton" id="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text" id="charCount">140</output>
         </div>
       </form>
     </section>
-    <section id="tweets-container"></section>
+
+    <!-- Display of all Tweets -->
+    <section id="tweets-container">
+    </section>
+
   </main>
 </body>
 

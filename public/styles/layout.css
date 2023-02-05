@@ -5,7 +5,7 @@
  */
 
 
-html {
+ html {
   box-sizing: border-box;
 }
 
@@ -46,7 +46,7 @@ main {
   flex-direction: column;
 }
 
-
+/* Header Styles for a Desktop View */
 @media (min-width: 1024px) {
   body {
     display: flex;
@@ -57,7 +57,7 @@ main {
   }
 
   main {
-    padding-top: 20vh;
+    padding-top: 25vh;
     margin-left: 5vw;
     background-color: #f4f1ec;
     width: 70%;
