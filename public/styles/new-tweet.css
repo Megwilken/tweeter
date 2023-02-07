@@ -12,9 +12,11 @@ container {
   display: flex;
   justify-content: center;
   color: red;
-  position: relative;
+  font-size: 20px;
   border: solid;
-  border-width: thick;
+  margin: 10px;
+  width:fit-content;
+  align-self: center;
 }
 
 #tweet-text {
@@ -49,6 +51,7 @@ button {
   align-self: flex-end;
   font-family: Bungee, sans-serif;
   font-size: 20px;
+  color: black;
 }
 
 .charsNeg {

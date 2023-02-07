@@ -6,16 +6,8 @@ $(document).ready(function () {
     const charsLeft = 140 - chars;
     if (charsLeft < 0) {
       $("#charCount").text(charsLeft).addClass("charsNeg");
-    } else {
+    } else {    
       $("#charCount").text(charsLeft);
-    }
-  });
-
-  $(".text").on("input", function () {
-    console.log("type!");
-  });
-
-  $(".button").on("submit", function () {
-    console.log("submit!");
+      }
   });
 });
