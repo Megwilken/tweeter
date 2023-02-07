@@ -55,11 +55,19 @@ $(document).ready(function () {
     const tweetText = $("#tweet-text").val();
     if (tweetText.length > 140) {
       $("#submit").click(function() {
-        $(".errorLong").slideDown(); 
+        $(".errorLong").slideDown(function() {
+          setTimeout(function() {
+            $(".errorLong").slideUp();
+          }, 2000);
+        }); 
       });
     } else if (tweetText === "" || tweetText === null) {
        $("#submit").click(function() {
-        $(".errorShort").slideDown(); 
+        $(".errorShort").slideDown(function() {
+          setTimeout(function() {
+            $(".errorShort").slideUp();
+          }, 2000);
+        }); 
       });
     } else {
       $.ajax({
