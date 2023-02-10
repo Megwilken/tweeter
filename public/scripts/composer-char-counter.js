@@ -7,7 +7,7 @@ $(document).ready(function () {
     if (charsLeft < 0) {
       $("#charCount").text(charsLeft).addClass("charsNeg");
     } else {    
-      $("#charCount").text(charsLeft);
+      $("#charCount").text(charsLeft).removeClass("charsNeg");
       }
   });
 });

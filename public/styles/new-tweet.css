@@ -6,6 +6,7 @@ container {
 .new-tweet {
   width: 95%;
   font-size: 25px;
+  flex-wrap: wrap;
 }
 
 #error {
