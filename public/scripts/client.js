@@ -76,6 +76,7 @@ $(document).ready(function () {
       }).done(() => {
         loadTweets()
         $("textarea").val("");
+        $(".counter").text(140);
       });
     }
   });

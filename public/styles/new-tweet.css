@@ -11,13 +11,14 @@ container {
 
 #error {
   display: flex;
+  align-items: center;
   justify-content: center;
   color: red;
   font-size: 20px;
   border: solid;
-  margin: 10px;
-  width:fit-content;
-  align-self: center;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 20px;
 }
 
 #tweet-text {
@@ -62,7 +63,7 @@ button {
 /* Header Styles for a Desktop View */
 @media (min-width: 1024px) {
   .new-tweet {
-    width: 60vw;
+    width: 57vw;
     justify-content: center;
     margin-left: 15px;
     }

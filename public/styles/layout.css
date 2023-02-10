@@ -40,7 +40,7 @@ body {
 
 main {
   display: flex;
-  padding: 10px;
+  padding: 20px;
   align-items: center;
   background-color: #f4f1ec;
   flex-direction: column;
@@ -57,7 +57,7 @@ main {
   }
 
   main {
-    padding-top: 25vh;
+    padding-top: 20vh;
     margin-left: 5vw;
     background-color: #f4f1ec;
     width: 70%;

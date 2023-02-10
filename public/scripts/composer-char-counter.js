@@ -1,7 +1,7 @@
 $(document).ready(function () {
   
   /* Function that counts the number of characters in the tweet */
-  $("#tweet-text").keyup(function () {
+  $("#tweet-text").on('input', function () {
     const chars = $(this).val().length;
     const charsLeft = 140 - chars;
     if (charsLeft < 0) {
