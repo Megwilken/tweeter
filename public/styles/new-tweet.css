@@ -63,7 +63,7 @@ button {
 /* Header Styles for a Desktop View */
 @media (min-width: 1024px) {
   .new-tweet {
-    width: 57vw;
+    width: 65vw;
     justify-content: center;
     margin-left: 15px;
     }

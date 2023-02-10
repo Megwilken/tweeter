@@ -19,9 +19,9 @@ header {
 @media (min-width: 1024px) {
   header {
     flex-direction: row;
-    margin-left: 55px;
-    width: 30%;
-    height: 30%;
+    margin-left: 40px;
+    width: 25%;
+    height: 25%;
     justify-content: space-evenly;
     align-content:flex-start;
     flex-wrap: nowrap;
